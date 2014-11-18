@@ -5,10 +5,21 @@
  */
 package org.team2856;
 
+import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.RobotDrive;
+
 /**
  *
  * @author Jan
  */
 public class DriveTrain {
+    private Jaguar left = new Jaguar(RobotVariables.DT_MC_SLOT, RobotVariables.DT_MC_CHANNEL_LEFT);
+    private Jaguar right = new Jaguar(RobotVariables.DT_MC_SLOT, RobotVariables.DT_MC_CHANNEL_RIGHT);
     
+    private RobotDrive DT = new RobotDrive(left, right);
+    
+    //author Jan
+    public void move(double dist){
+        DT.tankDrive(dist, dist);
+    }
 }
