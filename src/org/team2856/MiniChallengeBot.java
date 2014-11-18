@@ -18,12 +18,18 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * directory.
  */
 public class MiniChallengeBot extends IterativeRobot {
+    /**PRIVATE MEMBER VARIABLES**/
+    public Arm arm;
+    public DriveTrain DT;
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+    //@author Eric Cao
     public void robotInit() {
-        
+        arm = new Arm();
+        DT = new DriveTrain();
     }
 
     /**
