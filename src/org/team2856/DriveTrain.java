@@ -16,10 +16,14 @@ public class DriveTrain {
     private Jaguar left = new Jaguar(RobotVariables.DT_MC_SLOT, RobotVariables.DT_MC_CHANNEL_LEFT);
     private Jaguar right = new Jaguar(RobotVariables.DT_MC_SLOT, RobotVariables.DT_MC_CHANNEL_RIGHT);
     
-    private RobotDrive DT = new RobotDrive(left, right);
+    private RobotDrive RD = new RobotDrive(left, right);
     
     //author Jan
-    public void move(double dist){
-        DT.tankDrive(dist, dist);
+    public void move(double spd){
+        RD.tankDrive(spd, spd);
+    }
+    
+    public void stop(){
+        RD.tankDrive(0,0);
     }
 }
