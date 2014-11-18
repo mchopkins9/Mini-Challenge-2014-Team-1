@@ -5,10 +5,28 @@
  */
 package org.team2856;
 
+import edu.wpi.first.wpilibj.Solenoid;
+
 /**
  *
- * @author Jan
+ * @author Eric Cao
  */
 public class Arm {
+    /**PRIVATE MEMBER VARIABLES**/
+    private Solenoid extend = new Solenoid(RobotVariables.ARM_SOL_SLOT, RobotVariables.ARM_SOL_CHANNEL_A);
+    private Solenoid retract = new Solenoid(RobotVariables.ARM_SOL_SLOT, RobotVariables.ARM_SOL_CHANNEL_A);
+    private boolean extended = false;
+    
+    /****/
+    public void toggle(){
+        if(extended == false){
+            extend.set(true);
+            retract.set(false);
+        }else{
+           extend.set(false);
+           retract.set(true); 
+        }
+    }
+    
     
 }
