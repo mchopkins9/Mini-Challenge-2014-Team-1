@@ -19,8 +19,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  */
 public class MiniChallengeBot extends IterativeRobot {
     /**PRIVATE MEMBER VARIABLES**/
-    public Arm arm;
-    public DriveTrain DT;
+    private Arm arm;
+    private DriveTrain DT;
     
     /**
      * This function is run when the robot is first started up and should be
