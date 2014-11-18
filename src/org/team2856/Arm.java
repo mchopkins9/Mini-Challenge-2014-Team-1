@@ -26,6 +26,7 @@ public class Arm {
            extend.set(false);
            retract.set(true); 
         }
+        extended = !extended;
     }
     
     
