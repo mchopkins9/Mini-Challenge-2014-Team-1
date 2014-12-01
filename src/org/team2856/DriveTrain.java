@@ -18,6 +18,8 @@ public class DriveTrain {
     
     private RobotDrive RD = new RobotDrive(left, right);
     
+    public DriveTrain(){}
+    
     //author Jan
     public void move(double spd){
         RD.tankDrive(spd, spd);
