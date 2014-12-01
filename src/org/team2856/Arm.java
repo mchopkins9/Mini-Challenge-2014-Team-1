@@ -5,7 +5,7 @@
  */
 package org.team2856;
 
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Jaguar;
 
 /**
  *
@@ -13,21 +13,16 @@ import edu.wpi.first.wpilibj.Solenoid;
  */
 public class Arm {
     /**PRIVATE MEMBER VARIABLES**/
-    private Solenoid extend = new Solenoid(RobotVariables.ARM_SOL_SLOT, RobotVariables.ARM_SOL_CHANNEL_A);
-    private Solenoid retract = new Solenoid(RobotVariables.ARM_SOL_SLOT, RobotVariables.ARM_SOL_CHANNEL_A);
-    private boolean extended = false;
-    
-    /****/
-    public void toggle(){
-        if(extended == false){
-            extend.set(true);
-            retract.set(false);
-        }else{
-           extend.set(false);
-           retract.set(true); 
-        }
-        extended = !extended;
-    }
-    
-    
+   private Jaguar jaguar= new Jaguar(RobotVariables.ARM_MC_SLOT, RobotVariables.ARM_MC_CHANNEL);
+     
+   public Arm(){}
+   
+   public void move(double speed){
+       jaguar.set(speed);
+   }
+   
+   public void stop(){
+       jaguar.stopMotor();
+   }
+   
 }
