@@ -9,6 +9,7 @@ package org.team2856;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,7 +22,7 @@ public class MiniChallengeBot extends IterativeRobot {
     /**PRIVATE MEMBER VARIABLES**/
     private Arm arm;
     private DriveTrain DT;
-    
+    private Timer time;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -30,13 +31,20 @@ public class MiniChallengeBot extends IterativeRobot {
     public void robotInit() {
         arm = new Arm();
         DT = new DriveTrain();
+        time = new Timer();
     }
 
+    public void autonomousInit() {
+        DT.move(0.2);
+        time.start();
+    }
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-        
+        if(time.get() >= 2*1000){//2 is how many seconds run
+            DT.stop();
+        }
     }
 
     /**
