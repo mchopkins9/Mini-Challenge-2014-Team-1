@@ -44,6 +44,10 @@ public class MiniChallengeBot extends IterativeRobot {
     public void autonomousPeriodic() {
         if(time.get() >= 2*1000){//2 is how many seconds run
             DT.stop();
+            arm.move(0.1);
+            if(time.get() >= 3*1000){//3 is how many seconds run
+                arm.stop();
+            }
         }
     }
 
